@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools — Quick Reference</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media',
+      theme: {
+        extend: {
+          fontSize: {
+            '2xs': '0.75rem',
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+      }
+    }
+    @layer components {
+      .card {
+        @apply bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded px-2.5 py-2 mb-2;
+      }
+      .card-title {
+        @apply text-sm font-semibold mb-1.5 text-gray-800 dark:text-gray-200 uppercase tracking-wide;
+      }
+      .card-subtitle {
+        @apply text-xs font-normal normal-case tracking-normal text-gray-500 dark:text-gray-400;
+      }
+      .grid-keys {
+        @apply grid gap-y-0;
+      }
+      .key-row {
+        @apply flex items-baseline gap-2 py-px;
+      }
+      .key-row kbd {
+        @apply shrink-0 min-w-[8rem] text-right font-mono text-2xs px-1 py-px bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded text-gray-800 dark:text-gray-200;
+      }
+      .key-row span {
+        @apply text-2xs text-gray-600 dark:text-gray-400;
+      }
+      .section-label {
+        @apply text-sm font-bold mb-1.5 text-gray-700 dark:text-gray-300;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased p-3">
+
+  <div class="flex gap-3 mb-2 text-2xs">
+    <a href="../" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"><span class="font-bold">n</span>eovim</a>
+    <a href="../tmux/" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">tm<span class="font-bold">u</span>x</a>
+    <a href="../system/" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">mac<span class="font-bold">O</span>S</a>
+    <span class="font-semibold text-gray-800 dark:text-gray-200"><span class="underline">t</span>ools</span>
+  </div>
+
+  <div class="grid grid-cols-3 gap-3 items-start max-w-5xl">
+
+    <!-- ===== COLUMN 1: Git tools ===== -->
+    <div>
+      <div class="section-label">Git</div>
+
+      <div class="card">
+        <h2 class="card-title">Worktrees <span class="card-subtitle">(wt)</span></h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>wt switch</kbd><span>interactive picker</span></div>
+          <div class="key-row"><kbd>wt switch &lt;branch&gt;</kbd><span>switch to worktree</span></div>
+          <div class="key-row"><kbd>wt switch -c &lt;branch&gt;</kbd><span>create new branch + worktree</span></div>
+          <div class="key-row"><kbd>wt switch -c &lt;b&gt; -b &lt;base&gt;</kbd><span>create from specific base</span></div>
+          <div class="key-row"><kbd>wt switch -</kbd><span>previous worktree</span></div>
+          <div class="key-row"><kbd>wt switch ^</kbd><span>default branch worktree</span></div>
+          <div class="key-row"><kbd>wt switch pr:123</kbd><span>switch to PR branch</span></div>
+          <div class="key-row"><kbd>wt list</kbd><span>list worktrees and status</span></div>
+          <div class="key-row"><kbd>wt remove</kbd><span>remove current worktree</span></div>
+          <div class="key-row"><kbd>wt remove &lt;branch&gt;</kbd><span>remove specific worktree</span></div>
+          <div class="key-row"><kbd>wt merge</kbd><span>squash, rebase, ff, remove</span></div>
+          <div class="key-row"><kbd>wt merge --no-squash</kbd><span>merge preserving commits</span></div>
+          <div class="key-row"><kbd>wt step commit</kbd><span>stage + commit with LLM msg</span></div>
+          <div class="key-row"><kbd>wt step rebase</kbd><span>rebase onto target</span></div>
+          <div class="key-row"><kbd>wt step diff</kbd><span>show changes since branching</span></div>
+          <div class="key-row"><kbd>wt step prune</kbd><span>remove merged worktrees</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== COLUMN 2: CLI tools ===== -->
+    <div>
+      <div class="section-label">CLI Tools</div>
+
+      <div class="card">
+        <h2 class="card-title">Search &amp; Navigate</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>fd &lt;pattern&gt;</kbd><span>find files</span></div>
+          <div class="key-row"><kbd>sd &lt;find&gt; &lt;replace&gt;</kbd><span>find and replace</span></div>
+          <div class="key-row"><kbd>cdi</kbd><span>interactive directory jump</span></div>
+          <div class="key-row"><kbd>tldr &lt;cmd&gt;</kbd><span>quick command docs</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">System Monitoring</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>btop</kbd><span>resource monitor</span></div>
+          <div class="key-row"><kbd>btm</kbd><span>lightweight resource monitor</span></div>
+          <div class="key-row"><kbd>sudo procs</kbd><span>process viewer</span></div>
+          <div class="key-row"><kbd>sudo bandwhich</kbd><span>network bandwidth</span></div>
+          <div class="key-row"><kbd>dust</kbd><span>disk usage</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Dev Utilities</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>tokei</kbd><span>codebase line/language stats</span></div>
+          <div class="key-row"><kbd>hyperfine &lt;cmd&gt;</kbd><span>command benchmarking</span></div>
+          <div class="key-row"><kbd>grex &lt;examples&gt;</kbd><span>generate regex from examples</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== COLUMN 3: Claude ===== -->
+    <div>
+      <div class="section-label">Claude</div>
+
+      <div class="card">
+        <h2 class="card-title">Claude Code</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>@</kbd><span>mention files</span></div>
+          <div class="key-row"><kbd>!</kbd><span>run shell commands</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.addEventListener('keydown', e => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'n') window.location.href = '../';
+      if (e.key === 'u') window.location.href = '../tmux/';
+      if (e.key === 'o') window.location.href = '../system/';
+    });
+  </script>
+</body>
+</html>

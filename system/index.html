@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>macOS — Quick Reference</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media',
+      theme: {
+        extend: {
+          fontSize: {
+            '2xs': '0.75rem',
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+      }
+    }
+    @layer components {
+      .card {
+        @apply bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded px-2.5 py-2 mb-2;
+      }
+      .card-title {
+        @apply text-sm font-semibold mb-1.5 text-gray-800 dark:text-gray-200 uppercase tracking-wide;
+      }
+      .card-subtitle {
+        @apply text-xs font-normal normal-case tracking-normal text-gray-500 dark:text-gray-400;
+      }
+      .grid-keys {
+        @apply grid gap-y-0;
+      }
+      .key-row {
+        @apply flex items-baseline gap-2 py-px;
+      }
+      .key-row kbd {
+        @apply shrink-0 min-w-[8rem] text-right font-mono text-2xs px-1 py-px bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded text-gray-800 dark:text-gray-200;
+      }
+      .key-row span {
+        @apply text-2xs text-gray-600 dark:text-gray-400;
+      }
+      .section-label {
+        @apply text-sm font-bold mb-1.5 text-gray-700 dark:text-gray-300;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased p-3">
+
+  <div class="flex gap-3 mb-2 text-2xs">
+    <a href="../" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"><span class="font-bold">n</span>eovim</a>
+    <a href="../tmux/" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">tm<span class="font-bold">u</span>x</a>
+    <span class="font-semibold text-gray-800 dark:text-gray-200">mac<span class="underline">O</span>S</span>
+    <a href="../tools/" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"><span class="font-bold">t</span>ools</a>
+  </div>
+
+  <div class="grid grid-cols-4 gap-3 items-start">
+
+    <div>
+      <div class="section-label">&nbsp;</div>
+
+      <div class="card">
+        <h2 class="card-title">Window Management</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>alt-h/j/k/l</kbd><span>focus window left/down/up/right</span></div>
+          <div class="key-row"><kbd>shift-alt-h/l</kbd><span>swap window left/right</span></div>
+          <div class="key-row"><kbd>ctrl-shift-alt-h/l</kbd><span>move window left/right</span></div>
+          <div class="key-row"><kbd>shift-alt-t</kbd><span>toggle maximize</span></div>
+          <div class="key-row"><kbd>shift-alt-c</kbd><span>toggle center 70%</span></div>
+          <div class="key-row"><kbd>shift-alt-arrows</kbd><span>resize window</span></div>
+          <div class="key-row"><kbd>shift-alt-[1-9]</kbd><span>move to desktop N</span></div>
+          <div class="key-row"><kbd>ctrl-shift-alt-f3</kbd><span>meeting layout</span></div>
+          <div class="key-row"><kbd>ctrl-shift-alt-f4</kbd><span>screencast mode</span></div>
+          <div class="key-row"><kbd>ctrl-shift-alt-f5</kbd><span>reload Hammerspoon</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">&nbsp;</div>
+
+      <div class="card">
+        <h2 class="card-title">Readline</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>ctrl-b / ctrl-f</kbd><span>char back / forward</span></div>
+          <div class="key-row"><kbd>ctrl-a / ctrl-e</kbd><span>beginning / end of line</span></div>
+          <div class="key-row"><kbd>ctrl-w</kbd><span>word backward delete</span></div>
+          <div class="key-row"><kbd>ctrl-d</kbd><span>delete char on cursor</span></div>
+          <div class="key-row"><kbd>ctrl-k</kbd><span>delete to end of line</span></div>
+          <div class="key-row"><kbd>ctrl-u</kbd><span>delete to beginning of line</span></div>
+          <div class="key-row"><kbd>alt-f / alt-b</kbd><span>word forward / backward</span></div>
+          <div class="key-row"><kbd>ctrl-x ctrl-x</kbd><span>edit line in $EDITOR</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">FZF</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>ctrl-r</kbd><span>history search</span></div>
+          <div class="key-row"><kbd>ctrl-t</kbd><span>file search</span></div>
+          <div class="key-row"><kbd>alt-c</kbd><span>directory search</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">&nbsp;</div>
+
+      <div class="card">
+        <h2 class="card-title">Voice Input <span class="card-subtitle">(Wispr Flow)</span></h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>ctrl-`</kbd><span>hands-free mode</span></div>
+          <div class="key-row"><kbd>ctrl-tab</kbd><span>push to talk</span></div>
+          <div class="key-row"><kbd>ctrl-alt</kbd><span>command mode</span></div>
+          <div class="key-row"><kbd>cmd-ctrl-v</kbd><span>paste last transcript</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Clipboard <span class="card-subtitle">(Pastebot)</span></h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>hyper-c</kbd><span>pastebot quick</span></div>
+          <div class="key-row"><kbd>cmd-ctrl-c</kbd><span>sequential paste mode</span></div>
+          <div class="key-row"><kbd>cmd-ctrl-v</kbd><span>paste from sequential</span></div>
+          <div class="key-row"><kbd>cmd-shift-! / @ / #</kbd><span>paste 1 / 2 / 3</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">&nbsp;</div>
+
+      <div class="card">
+        <h2 class="card-title">Quick Entry</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>hyper-h</kbd><span>Things</span></div>
+          <div class="key-row"><kbd>hyper-t</kbd><span>Trailer</span></div>
+          <div class="key-row"><kbd>hyper-a</kbd><span>Raycast AI</span></div>
+          <div class="key-row"><kbd>ctrl-shift-space</kbd><span>1Password quick</span></div>
+          <div class="key-row"><kbd>hyper-r</kbd><span>quick add reminder</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Dash</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cmd-alt-d</kbd><span>search selected text</span></div>
+          <div class="key-row"><kbd>meta-a / r / s</kbd><span>rails / ruby / js docs</span></div>
+          <div class="key-row"><kbd>meta-y / u / t</kbd><span>ts / lua / rust docs</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">System</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cmd-Y</kbd><span>quick look / preview</span></div>
+          <div class="key-row"><kbd>cmd-ctrl-q</kbd><span>lock screen</span></div>
+          <div class="key-row"><kbd>cmd-shift-q</kbd><span>logout</span></div>
+          <div class="key-row"><kbd>cmd-m</kbd><span>minimize app</span></div>
+          <div class="key-row"><kbd>cmd-h</kbd><span>hide app</span></div>
+          <div class="key-row"><kbd>cmd-alt-h</kbd><span>hide other apps</span></div>
+          <div class="key-row"><kbd>cmd-alt-d</kbd><span>show/hide dock</span></div>
+          <div class="key-row"><kbd>cmd-shift-/</kbd><span>show help menu</span></div>
+          <div class="key-row"><kbd>cmd-shift-g</kbd><span>goto folder in finder</span></div>
+          <div class="key-row"><kbd>cmd-shift-.</kbd><span>toggle hidden in finder</span></div>
+          <div class="key-row"><kbd>shift-alt-/</kbd><span>1Password fill</span></div>
+          <div class="key-row"><kbd>cmd-tab + alt(hold)</kbd><span>maximize app</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.addEventListener('keydown', e => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'n') window.location.href = '../';
+      if (e.key === 'u') window.location.href = '../tmux/';
+      if (e.key === 't') window.location.href = '../tools/';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tmux — Quick Reference</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media',
+      theme: {
+        extend: {
+          fontSize: {
+            '2xs': '0.75rem',
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+      }
+    }
+    @layer components {
+      .card {
+        @apply bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded px-2.5 py-2 mb-2;
+      }
+      .card-title {
+        @apply text-sm font-semibold mb-1.5 text-gray-800 dark:text-gray-200 uppercase tracking-wide;
+      }
+      .card-subtitle {
+        @apply text-xs font-normal normal-case tracking-normal text-gray-500 dark:text-gray-400;
+      }
+      .grid-keys {
+        @apply grid gap-y-0;
+      }
+      .key-row {
+        @apply flex items-baseline gap-2 py-px;
+      }
+      .key-row kbd {
+        @apply shrink-0 min-w-[8rem] text-right font-mono text-2xs px-1 py-px bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded text-gray-800 dark:text-gray-200;
+      }
+      .key-row span {
+        @apply text-2xs text-gray-600 dark:text-gray-400;
+      }
+      .section-label {
+        @apply text-sm font-bold mb-1.5 text-gray-700 dark:text-gray-300;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased p-3">
+
+  <div class="flex gap-3 mb-2 text-2xs">
+    <a href="../" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"><span class="font-bold">n</span>eovim</a>
+    <span class="font-semibold text-gray-800 dark:text-gray-200">tm<span class="underline">u</span>x</span>
+    <a href="../system/" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">mac<span class="font-bold">O</span>S</a>
+    <a href="../tools/" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"><span class="font-bold">t</span>ools</a>
+  </div>
+
+  <div class="max-w-xs">
+
+    <div>
+      <div class="section-label">&nbsp;</div>
+
+      <div class="card">
+        <h2 class="card-title">Sessions</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cmd-shift-k</kbd><span>new session picker</span></div>
+          <div class="key-row"><kbd>cmd-k</kbd><span>session switcher</span></div>
+          <div class="key-row"><kbd>cmd-l</kbd><span>last session</span></div>
+          <div class="key-row"><kbd>cmd-q</kbd><span>detach session</span></div>
+          <div class="key-row"><kbd>cmd-.</kbd><span>rename session</span></div>
+          <div class="key-row"><kbd>ctrl-s ctrl-l</kbd><span>clear screen</span></div>
+          <div class="key-row"><kbd>ctrl-s ctrl-h</kbd><span>reset screen</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Windows</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cmd-t</kbd><span>new window</span></div>
+          <div class="key-row"><kbd>cmd-[1-9]</kbd><span>switch to window</span></div>
+          <div class="key-row"><kbd>cmd-x</kbd><span>close window</span></div>
+          <div class="key-row"><kbd>cmd-shift-t</kbd><span>move pane to new window</span></div>
+          <div class="key-row"><kbd>cmd-shift-[ / ]</kbd><span>prev / next window</span></div>
+          <div class="key-row"><kbd>cmd-,</kbd><span>rename window</span></div>
+          <div class="key-row"><kbd>ctrl-s W</kbd><span>swap windows</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Panes</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cmd-n</kbd><span>new horizontal pane</span></div>
+          <div class="key-row"><kbd>cmd-shift-n</kbd><span>new vertical pane</span></div>
+          <div class="key-row"><kbd>cmd-w</kbd><span>close pane</span></div>
+          <div class="key-row"><kbd>cmd-z</kbd><span>zoom pane</span></div>
+          <div class="key-row"><kbd>shift-[arrow]</kbd><span>resize pane (fine)</span></div>
+          <div class="key-row"><kbd>ctrl-shift-[arrow]</kbd><span>resize pane (coarse)</span></div>
+          <div class="key-row"><kbd>ctrl-s s</kbd><span>swap panes</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Copy Mode <span class="card-subtitle">(cmd-[)</span></h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>[shift]-/</kbd><span>search up / down</span></div>
+        </div>
+        <p class="text-2xs text-gray-500 dark:text-gray-500 mt-1">vim bindings available</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.addEventListener('keydown', e => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'n') window.location.href = '../';
+      if (e.key === 'o') window.location.href = '../system/';
+      if (e.key === 't') window.location.href = '../tools/';
+    });
+  </script>
+</body>
+</html>
