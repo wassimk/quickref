@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keymaps</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media',
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 bg-gray-50/90 dark:bg-gray-950/90 backdrop-blur border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-4 py-2 flex gap-3 overflow-x-auto text-sm font-medium">
+      <a href="#neovim" class="shrink-0 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">Neovim</a>
+      <a href="#system" class="shrink-0 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">System</a>
+      <a href="#claude" class="shrink-0 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">Claude</a>
+      <a href="#wispr" class="shrink-0 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">Wispr Flow</a>
+      <a href="#shell" class="shrink-0 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">Shell</a>
+      <a href="#tmux" class="shrink-0 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">Tmux</a>
+      <a href="#macos" class="shrink-0 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">macOS</a>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-4 py-6 space-y-8">
+
+    <!-- =========== NEOVIM =========== -->
+    <section id="neovim">
+      <h1 class="text-2xl font-bold mb-4">Neovim</h1>
+
+      <!-- Basic Usage -->
+      <div class="card">
+        <h2 class="card-title">Basic Usage</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>ctrl-n</kbd><span>file tree</span></div>
+          <div class="key-row"><kbd>][b</kbd><span>cycle buffers</span></div>
+          <div class="key-row"><kbd>.</kbd><span>repeat last motion/command</span></div>
+          <div class="key-row"><kbd>ZZ</kbd><span>write file and exit</span></div>
+          <div class="key-row"><kbd>ZQ</kbd><span>exit without writing file</span></div>
+          <div class="key-row"><kbd>i / I</kbd><span>insert before cursor / beginning of line</span></div>
+          <div class="key-row"><kbd>x / X</kbd><span>delete char after / before cursor</span></div>
+          <div class="key-row"><kbd>r / R</kbd><span>replace char / overwrite chars</span></div>
+          <div class="key-row"><kbd>D</kbd><span>delete cursor to end of line</span></div>
+          <div class="key-row"><kbd>a / A</kbd><span>insert after cursor / end of line</span></div>
+          <div class="key-row"><kbd>o / O</kbd><span>new line below / above cursor</span></div>
+        </div>
+      </div>
+
+      <!-- Motions / Movements -->
+      <div class="card">
+        <h2 class="card-title">Motions / Movements</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>[f|F]&lt;char&gt;</kbd><span>find char and jump to it</span></div>
+          <div class="key-row"><kbd>[t|T]&lt;char&gt;</kbd><span>find char and jump until it</span></div>
+          <div class="key-row"><kbd>w / b</kbd><span>jump by word forward / backward</span></div>
+          <div class="key-row"><kbd>[shift]-/</kbd><span>search up / down</span></div>
+          <div class="key-row"><kbd>N / n</kbd><span>repeat search forward / backwards</span></div>
+          <div class="key-row"><kbd># / *</kbd><span>search back / forward for cursor word</span></div>
+          <div class="key-row"><kbd>ctrl-o / ctrl-i</kbd><span>go back to before / after</span></div>
+          <div class="key-row"><kbd>&lt;leader&gt;n</kbd><span>remove highlight</span></div>
+          <div class="key-row"><kbd>&lt;leader&gt;l</kbd><span>toggle location list</span></div>
+          <div class="key-row"><kbd>&lt;leader&gt;q</kbd><span>toggle quickfix list</span></div>
+          <div class="key-row"><kbd>^</kbd><span>move to first non-blank char of line</span></div>
+          <div class="key-row"><kbd>$</kbd><span>move to end of line</span></div>
+          <div class="key-row"><kbd>0</kbd><span>move to beginning of line</span></div>
+          <div class="key-row"><kbd>gg</kbd><span>first line in buffer</span></div>
+          <div class="key-row"><kbd>G</kbd><span>last line in buffer</span></div>
+          <div class="key-row"><kbd>H / M / L</kbd><span>high / middle / low of window</span></div>
+          <div class="key-row"><kbd>ctrl-d / ctrl-u</kbd><span>scroll down / up half screens</span></div>
+          <div class="key-row"><kbd>zz</kbd><span>center current line</span></div>
+        </div>
+      </div>
+
+      <!-- Operators -->
+      <div class="card">
+        <h2 class="card-title">Operators</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>d</kbd><span>delete</span></div>
+          <div class="key-row"><kbd>y</kbd><span>yank</span></div>
+          <div class="key-row"><kbd>c</kbd><span>change</span></div>
+          <div class="key-row"><kbd>&gt; / &lt;</kbd><span>indent / dedent</span></div>
+          <div class="key-row"><kbd>=</kbd><span>reformat</span></div>
+          <div class="key-row"><kbd>~</kbd><span>change case</span></div>
+          <div class="key-row"><kbd>gq</kbd><span>format lines to textwidth</span></div>
+          <div class="key-row"><kbd>gs</kbd><span>sort selection</span></div>
+          <div class="key-row"><kbd>ga=</kbd><span>align selection on = sign</span></div>
+        </div>
+      </div>
+
+      <!-- Text Objects -->
+      <div class="card">
+        <h2 class="card-title">Text Objects</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>iw / aw</kbd><span>inner word / a word</span></div>
+          <div class="key-row"><kbd>is / as</kbd><span>inner sentence / a sentence</span></div>
+          <div class="key-row"><kbd>ip / ap</kbd><span>inner paragraph / a paragraph</span></div>
+          <div class="key-row"><kbd>i) / a)</kbd><span>inner parens / a parens</span></div>
+          <div class="key-row"><kbd>i' / a'</kbd><span>inner single quote / a single quote</span></div>
+          <div class="key-row"><kbd>i" / a"</kbd><span>inner double quotes / a double quote</span></div>
+          <div class="key-row"><kbd>it / at</kbd><span>inner tag / a tag</span></div>
+          <div class="key-row"><kbd>ih</kbd><span>inner diff hunk</span></div>
+          <div class="key-row"><kbd>il / al</kbd><span>inner line / a line</span></div>
+          <div class="key-row"><kbd>ie / ae</kbd><span>inner entire (file) / a entire (file)</span></div>
+          <div class="key-row"><kbd>ii / ai</kbd><span>inside indent / around indent</span></div>
+          <div class="key-row"><kbd>cr[u|s|c|t|m|-|.|&lt;Space&gt;]</kbd><span>change case</span></div>
+        </div>
+      </div>
+
+      <!-- Surround / Comment -->
+      <div class="card">
+        <h2 class="card-title">Surround / Comment</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>d[jk]</kbd><span>delete down/up a line</span></div>
+          <div class="key-row"><kbd>dt)</kbd><span>delete until the next closing )</span></div>
+          <div class="key-row"><kbd>d/rails</kbd><span>delete until the word rails</span></div>
+          <div class="key-row"><kbd>cs])</kbd><span>change surrounding [] to ()</span></div>
+          <div class="key-row"><kbd>ci"</kbd><span>delete and insert mode inside "</span></div>
+          <div class="key-row"><kbd>ds]</kbd><span>delete surrounding []</span></div>
+          <div class="key-row"><kbd>[c|d|y]w</kbd><span>change/delete/yank word</span></div>
+          <div class="key-row"><kbd>[c|d|y]i"</kbd><span>change/delete/yank inside "</span></div>
+          <div class="key-row"><kbd>vi"p</kbd><span>visual select inside " and paste over</span></div>
+          <div class="key-row"><kbd>ysi[w|l]"</kbd><span>insert " around word/line</span></div>
+          <div class="key-row"><kbd>S"</kbd><span>wrap visual selection with "</span></div>
+          <div class="key-row"><kbd>[count]gcc</kbd><span>comment line(s)</span></div>
+          <div class="key-row"><kbd>gc[O|o]</kbd><span>comment line above / below</span></div>
+          <div class="key-row"><kbd>gcA</kbd><span>comment end of line</span></div>
+          <div class="key-row"><kbd>gc[count]{motion}</kbd><span>comment with motion</span></div>
+        </div>
+      </div>
+
+      <!-- Recording -->
+      <div class="card">
+        <h2 class="card-title">Recording</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>qq</kbd><span>start recording into q</span></div>
+          <div class="key-row"><kbd>@q</kbd><span>play q recording</span></div>
+        </div>
+      </div>
+
+      <!-- Folds -->
+      <div class="card">
+        <h2 class="card-title">Folds</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>za</kbd><span>toggle open/close fold</span></div>
+          <div class="key-row"><kbd>zR</kbd><span>open all folds</span></div>
+        </div>
+      </div>
+
+      <!-- Spelling -->
+      <div class="card">
+        <h2 class="card-title">Spelling</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>z=</kbd><span>suggest</span></div>
+          <div class="key-row"><kbd>zg</kbd><span>learn word</span></div>
+          <div class="key-row"><kbd>zw</kbd><span>mark word misspelled</span></div>
+        </div>
+      </div>
+
+      <!-- Treesitter -->
+      <div class="card">
+        <h2 class="card-title">Treesitter</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>gri</kbd><span>start incremental selection</span></div>
+          <div class="key-row"><kbd>grn</kbd><span>increment select node</span></div>
+          <div class="key-row"><kbd>grp</kbd><span>decrement select node</span></div>
+          <div class="key-row"><kbd>grs</kbd><span>increment select scope</span></div>
+        </div>
+      </div>
+
+      <!-- Menus -->
+      <div class="card">
+        <h2 class="card-title">Menus</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>gl</kbd><span>LSP</span></div>
+          <div class="key-row"><kbd>gd</kbd><span>Diagnostics</span></div>
+          <div class="key-row"><kbd>&lt;leader&gt;t</kbd><span>testing menu</span></div>
+          <div class="key-row"><kbd>&lt;leader&gt;h</kbd><span>git</span></div>
+          <div class="key-row"><kbd>&lt;leader&gt;d</kbd><span>debug / diagnostic menu</span></div>
+          <div class="key-row"><kbd>&lt;leader&gt;a</kbd><span>AI menu</span></div>
+          <div class="key-row"><kbd>ctrl-f</kbd><span>Snacks menu</span></div>
+        </div>
+      </div>
+
+      <!-- AI -->
+      <div class="card">
+        <h2 class="card-title">AI</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>&lt;leader&gt;a</kbd><span>main menu</span></div>
+          <div class="key-row"><kbd>&lt;leader&gt;aa / ctrl-/</kbd><span>toggle AI</span></div>
+          <div class="key-row"><kbd>ctrl-b</kbd><span>insert buffers</span></div>
+          <div class="key-row"><kbd>ctrl-f</kbd><span>insert files</span></div>
+          <div class="key-row"><kbd>ctrl-p</kbd><span>prompt</span></div>
+          <div class="key-row"><kbd>ctrl-q</kbd><span>stop insert / quit</span></div>
+        </div>
+      </div>
+
+      <!-- Terminal -->
+      <div class="card">
+        <h2 class="card-title">Terminal</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>ctrl-\</kbd><span>toggle a terminal</span></div>
+          <div class="key-row"><kbd>ctrl-]</kbd><span>escape to normal mode</span></div>
+        </div>
+      </div>
+
+      <!-- LSP -->
+      <div class="card">
+        <h2 class="card-title">LSP</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>gl</kbd><span>main menu</span></div>
+          <div class="key-row"><kbd>K</kbd><span>hover info (K into float, q to close)</span></div>
+          <div class="key-row"><kbd>ctrl-]</kbd><span>go definition &rarr; symbol &rarr; c-tag</span></div>
+        </div>
+      </div>
+
+      <!-- Snacks Picker -->
+      <div class="card">
+        <h2 class="card-title">Snacks Picker</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>&lt;leader&gt;f</kbd><span>find file mode</span></div>
+          <div class="key-row"><kbd>&lt;leader&gt;s</kbd><span>live grep mode</span></div>
+          <div class="key-row"><kbd>ctrl-l</kbd><span>scope folder(s)</span></div>
+          <div class="key-row"><kbd>ctrl-f</kbd><span>scope file extension</span></div>
+          <div class="key-row"><kbd>&lt;leader&gt;w</kbd><span>grep cursor word</span></div>
+          <div class="key-row"><kbd>ctrl-f h</kbd><span>help</span></div>
+          <div class="key-row"><kbd>ctrl-f k</kbd><span>key mappings</span></div>
+          <div class="key-row"><kbd>ctrl-f c</kbd><span>commands</span></div>
+          <div class="key-row"><kbd>ctrl-r</kbd><span>command history (in command mode)</span></div>
+          <div class="key-row"><kbd>ctrl-p / ctrl-n</kbd><span>previous / next</span></div>
+          <div class="key-row"><kbd>ctrl-u / ctrl-d</kbd><span>up / down in preview window</span></div>
+          <div class="key-row"><kbd>return</kbd><span>open result</span></div>
+          <div class="key-row"><kbd>ctrl-v</kbd><span>open in vertical split</span></div>
+          <div class="key-row"><kbd>ctrl-x</kbd><span>open in horizontal split</span></div>
+          <div class="key-row"><kbd>ctrl-t</kbd><span>open in tab</span></div>
+          <div class="key-row"><kbd>ctrl-g</kbd><span>toggle fuzzy / live grep</span></div>
+          <div class="key-row"><kbd>ctrl-q</kbd><span>send filtered items to quickfix</span></div>
+          <div class="key-row"><kbd>[shift] tab</kbd><span>toggle selection of item up/down</span></div>
+        </div>
+      </div>
+
+      <!-- Search & Replace -->
+      <div class="card">
+        <h2 class="card-title">Search &amp; Replace</h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Quickfix/loclist: <code class="text-xs">cdo</code> is each line (entry), <code class="text-xs">cfdo</code> is each file so use <code class="text-xs">%</code> for whole file</p>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cdo s/\vfoo/bar/g | write</kbd><span>replace per line entry</span></div>
+          <div class="key-row"><kbd>cfdo %s/\vfoo/bar/g | write</kbd><span>replace per file</span></div>
+        </div>
+        <ul class="mt-3 text-sm text-gray-600 dark:text-gray-400 space-y-1 list-disc list-inside">
+          <li>Omit search string if it's highlighted</li>
+          <li><code class="text-xs">g</code> match multiple per line, <code class="text-xs">c</code> to confirm</li>
+          <li><code class="text-xs">\v</code> switches to non-vim regex</li>
+          <li>Wrap in <code class="text-xs">()</code> and use <code class="text-xs">\1</code>, <code class="text-xs">\2</code> in replace</li>
+          <li><code class="text-xs">cfdo write</code> write all files</li>
+          <li><code class="text-xs">cfdo normal undo</code> undo last change to files</li>
+        </ul>
+      </div>
+
+      <!-- BQF -->
+      <div class="card">
+        <h2 class="card-title">BQF</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>tab</kbd><span>mark/sign an item</span></div>
+          <div class="key-row"><kbd>z tab</kbd><span>clear marks/signs</span></div>
+          <div class="key-row"><kbd>zn</kbd><span>new qf with signed items</span></div>
+          <div class="key-row"><kbd>zN</kbd><span>new qf with non-signed items</span></div>
+          <div class="key-row"><kbd>zf</kbd><span>fuzzy find qf list</span></div>
+          <div class="key-row"><kbd>&lt; / &gt;</kbd><span>cycle between qf lists</span></div>
+        </div>
+      </div>
+
+      <!-- Completion -->
+      <div class="card">
+        <h2 class="card-title">Completion</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>ctrl-p / ctrl-n</kbd><span>previous / next</span></div>
+          <div class="key-row"><kbd>ctrl-u / ctrl-d</kbd><span>up / down in docs window</span></div>
+          <div class="key-row"><kbd>ctrl-y</kbd><span>confirm selection</span></div>
+          <div class="key-row"><kbd>ctrl-e</kbd><span>abort completion</span></div>
+          <div class="key-row"><kbd>ctrl-space</kbd><span>trigger completion (insert mode)</span></div>
+        </div>
+      </div>
+
+      <!-- Snippets -->
+      <div class="card">
+        <h2 class="card-title">Snippets</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>tab</kbd><span>previous / next / trigger jumpable</span></div>
+          <div class="key-row"><kbd>ctrl-p / ctrl-n / ctrl-u</kbd><span>previous / next / ui choice(s)</span></div>
+        </div>
+      </div>
+
+      <!-- Vimdiff -->
+      <div class="card">
+        <h2 class="card-title">Vimdiff <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(git mergetool)</span></h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>ggl</kbd><span>diff get local (right side)</span></div>
+          <div class="key-row"><kbd>dgu</kbd><span>diff get upstream (left side)</span></div>
+          <div class="key-row"><kbd>]m</kbd><span>next conflict</span></div>
+        </div>
+      </div>
+
+      <!-- Kaleidoscope -->
+      <div class="card">
+        <h2 class="card-title">Kaleidoscope <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(git mergetool --gui)</span></h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cmd-[left|right]</kbd><span>accept arrow side</span></div>
+          <div class="key-row"><kbd>cmd-alt-[left|right]</kbd><span>accept both, arrow first</span></div>
+          <div class="key-row"><kbd>cmd-[up|down]</kbd><span>cycle changes</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== SYSTEM =========== -->
+    <section id="system">
+      <h1 class="text-2xl font-bold mb-4">System</h1>
+
+      <div class="card">
+        <h2 class="card-title">Window Management <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(Hammerspoon)</span></h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>alt-h</kbd><span>focus window west</span></div>
+          <div class="key-row"><kbd>alt-j</kbd><span>focus window south</span></div>
+          <div class="key-row"><kbd>alt-k</kbd><span>focus window north</span></div>
+          <div class="key-row"><kbd>alt-l</kbd><span>focus window east</span></div>
+          <div class="key-row"><kbd>shift-alt-h</kbd><span>swap window left</span></div>
+          <div class="key-row"><kbd>shift-alt-l</kbd><span>swap window right</span></div>
+          <div class="key-row"><kbd>ctrl-shift-alt-h</kbd><span>move window left</span></div>
+          <div class="key-row"><kbd>ctrl-shift-alt-l</kbd><span>move window right</span></div>
+          <div class="key-row"><kbd>shift-alt-t</kbd><span>toggle maximize</span></div>
+          <div class="key-row"><kbd>shift-alt-c</kbd><span>toggle center 70% width</span></div>
+          <div class="key-row"><kbd>shift-alt-left</kbd><span>resize narrower / wider</span></div>
+          <div class="key-row"><kbd>shift-alt-right</kbd><span>resize narrower / wider</span></div>
+          <div class="key-row"><kbd>shift-alt-up</kbd><span>resize taller</span></div>
+          <div class="key-row"><kbd>shift-alt-down</kbd><span>resize shorter</span></div>
+          <div class="key-row"><kbd>shift-alt-[1-9]</kbd><span>move window to desktop N</span></div>
+          <div class="key-row"><kbd>ctrl-shift-alt-f3</kbd><span>resize windows for meetings</span></div>
+          <div class="key-row"><kbd>ctrl-shift-alt-f4</kbd><span>start screencast mode</span></div>
+          <div class="key-row"><kbd>ctrl-shift-alt-f5</kbd><span>reload Hammerspoon</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== CLAUDE =========== -->
+    <section id="claude">
+      <h1 class="text-2xl font-bold mb-4">Claude</h1>
+
+      <div class="card">
+        <h2 class="card-title">Claude Code</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>@</kbd><span>mention files</span></div>
+          <div class="key-row"><kbd>!</kbd><span>run shell commands</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== WISPR FLOW =========== -->
+    <section id="wispr">
+      <h1 class="text-2xl font-bold mb-4">Wispr Flow</h1>
+
+      <div class="card">
+        <h2 class="card-title">Voice Input</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>ctrl-`</kbd><span>hands-free mode</span></div>
+          <div class="key-row"><kbd>ctrl-tab</kbd><span>push to talk</span></div>
+          <div class="key-row"><kbd>alt-ctrl</kbd><span>command mode</span></div>
+          <div class="key-row"><kbd>cmd-ctrl-v</kbd><span>paste last transcript</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== SHELL =========== -->
+    <section id="shell">
+      <h1 class="text-2xl font-bold mb-4">Shell</h1>
+
+      <div class="card">
+        <h2 class="card-title">Readline</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>ctrl-b</kbd><span>char back</span></div>
+          <div class="key-row"><kbd>ctrl-f</kbd><span>char forward</span></div>
+          <div class="key-row"><kbd>ctrl-w</kbd><span>word backward delete</span></div>
+          <div class="key-row"><kbd>ctrl-a</kbd><span>beginning of line</span></div>
+          <div class="key-row"><kbd>ctrl-e</kbd><span>end of line</span></div>
+          <div class="key-row"><kbd>ctrl-d</kbd><span>delete char on cursor</span></div>
+          <div class="key-row"><kbd>alt-f</kbd><span>word forward</span></div>
+          <div class="key-row"><kbd>alt-b</kbd><span>word backward</span></div>
+          <div class="key-row"><kbd>ctrl-x ctrl-x</kbd><span>edit line in $EDITOR</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">FZF</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>ctrl-r</kbd><span>history search</span></div>
+          <div class="key-row"><kbd>ctrl-t</kbd><span>file search</span></div>
+          <div class="key-row"><kbd>alt-c</kbd><span>directory search</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Pastebot</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>hyper-c</kbd><span>pastebot quick</span></div>
+          <div class="key-row"><kbd>cmd-ctrl-c</kbd><span>sequential paste mode</span></div>
+          <div class="key-row"><kbd>cmd-ctrl-v</kbd><span>paste from sequential mode</span></div>
+          <div class="key-row"><kbd>cmd-shift-!</kbd><span>paste 1</span></div>
+          <div class="key-row"><kbd>cmd-shift-@</kbd><span>paste 2</span></div>
+          <div class="key-row"><kbd>cmd-shift-#</kbd><span>paste 3</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Tools</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>teeldear</kbd><span>quick docs</span></div>
+          <div class="key-row"><kbd>btop</kbd><span>replacement for top/htop</span></div>
+          <div class="key-row"><kbd>btm</kbd><span>top/htop resource usage</span></div>
+          <div class="key-row"><kbd>fd</kbd><span>find file finder</span></div>
+          <div class="key-row"><kbd>sudo procs</kbd><span>ps processes</span></div>
+          <div class="key-row"><kbd>tokei</kbd><span>cloc codebase stat analysis</span></div>
+          <div class="key-row"><kbd>sd</kbd><span>sed search and displace</span></div>
+          <div class="key-row"><kbd>dust</kbd><span>du disk usage</span></div>
+          <div class="key-row"><kbd>hyperfine</kbd><span>time benchmarking</span></div>
+          <div class="key-row"><kbd>grex</kbd><span>regex CLI</span></div>
+          <div class="key-row"><kbd>sudo bandwhich</kbd><span>network bandwidth</span></div>
+          <div class="key-row"><kbd>cdi</kbd><span>zoxide interactive</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== TMUX =========== -->
+    <section id="tmux">
+      <h1 class="text-2xl font-bold mb-4">Tmux</h1>
+
+      <div class="card">
+        <h2 class="card-title">Sessions</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cmd-k</kbd><span>session switcher</span></div>
+          <div class="key-row"><kbd>cmd-l</kbd><span>last session</span></div>
+          <div class="key-row"><kbd>cmd-q</kbd><span>detach session</span></div>
+          <div class="key-row"><kbd>cmd-.</kbd><span>rename session</span></div>
+          <div class="key-row"><kbd>ctrl-s ctrl-l</kbd><span>clear screen</span></div>
+          <div class="key-row"><kbd>ctrl-s ctrl-h</kbd><span>reset screen</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Windows</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cmd-t</kbd><span>new window</span></div>
+          <div class="key-row"><kbd>cmd-[1-9]</kbd><span>switch to window</span></div>
+          <div class="key-row"><kbd>cmd-x</kbd><span>close window</span></div>
+          <div class="key-row"><kbd>cmd-shift-t</kbd><span>move pane to new window</span></div>
+          <div class="key-row"><kbd>cmd-shift-[</kbd><span>previous window</span></div>
+          <div class="key-row"><kbd>cmd-shift-]</kbd><span>next window</span></div>
+          <div class="key-row"><kbd>cmd-,</kbd><span>rename window</span></div>
+          <div class="key-row"><kbd>ctrl-s W</kbd><span>swap windows</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Panes</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cmd-n</kbd><span>new horizontal pane</span></div>
+          <div class="key-row"><kbd>cmd-shift-n</kbd><span>new vertical pane</span></div>
+          <div class="key-row"><kbd>cmd-w</kbd><span>close pane</span></div>
+          <div class="key-row"><kbd>cmd-z</kbd><span>zoom pane</span></div>
+          <div class="key-row"><kbd>shift-[arrow]</kbd><span>resize pane (fine)</span></div>
+          <div class="key-row"><kbd>ctrl-shift-[arrow]</kbd><span>resize pane (coarse)</span></div>
+          <div class="key-row"><kbd>ctrl-s s</kbd><span>swap panes</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Copy Mode <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(cmd-[)</span></h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>[shift]-/</kbd><span>search up / down</span></div>
+          <div class="key-row"><kbd></kbd><span>vim bindings available</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========== macOS =========== -->
+    <section id="macos">
+      <h1 class="text-2xl font-bold mb-4">macOS</h1>
+
+      <div class="card">
+        <h2 class="card-title">System</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cmd-Y</kbd><span>quick look / preview</span></div>
+          <div class="key-row"><kbd>cmd-ctrl-q</kbd><span>lock screen</span></div>
+          <div class="key-row"><kbd>cmd-shift-q</kbd><span>logout</span></div>
+          <div class="key-row"><kbd>cmd-m</kbd><span>minimize app</span></div>
+          <div class="key-row"><kbd>cmd-h</kbd><span>hide app</span></div>
+          <div class="key-row"><kbd>cmd-alt-h</kbd><span>hide other apps</span></div>
+          <div class="key-row"><kbd>cmd-alt-d</kbd><span>show/hide dock</span></div>
+          <div class="key-row"><kbd>cmd-shift-/</kbd><span>show help menu</span></div>
+          <div class="key-row"><kbd>cmd-shift-g</kbd><span>goto folder in finder</span></div>
+          <div class="key-row"><kbd>cmd-shift-.</kbd><span>toggle hidden in finder</span></div>
+          <div class="key-row"><kbd>hyper-h</kbd><span>Things quick entry</span></div>
+          <div class="key-row"><kbd>hyper-t</kbd><span>Trailer menu</span></div>
+          <div class="key-row"><kbd>hyper-a</kbd><span>Raycast AI</span></div>
+          <div class="key-row"><kbd>ctrl-,</kbd><span>Raycast floating notes</span></div>
+          <div class="key-row"><kbd>ctrl-shift-/</kbd><span>1Password fill</span></div>
+          <div class="key-row"><kbd>ctrl-shift-space</kbd><span>1Password quick</span></div>
+          <div class="key-row"><kbd>cmd-tab + alt(hold)</kbd><span>maximize app</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Dash</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cmd-alt-d</kbd><span>search selected text in Dash</span></div>
+          <div class="key-row"><kbd>meta-a</kbd><span>rails docs</span></div>
+          <div class="key-row"><kbd>meta-r</kbd><span>ruby docs</span></div>
+          <div class="key-row"><kbd>meta-s</kbd><span>javascript docs</span></div>
+          <div class="key-row"><kbd>meta-y</kbd><span>typescript docs</span></div>
+          <div class="key-row"><kbd>meta-u</kbd><span>lua docs</span></div>
+          <div class="key-row"><kbd>meta-t</kbd><span>rust docs</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <style type="text/tailwindcss">
+    @layer components {
+      .card {
+        @apply bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-4 mb-4;
+      }
+      .card-title {
+        @apply text-base font-semibold mb-3 text-gray-800 dark:text-gray-200;
+      }
+      .grid-keys {
+        @apply grid gap-y-1;
+      }
+      .key-row {
+        @apply flex items-baseline gap-3 py-0.5;
+      }
+      .key-row kbd {
+        @apply shrink-0 min-w-[10rem] text-right font-mono text-sm px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded text-gray-800 dark:text-gray-200;
+      }
+      .key-row span {
+        @apply text-sm text-gray-600 dark:text-gray-400;
+      }
+    }
+  </style>
+
+</body>
+</html>
