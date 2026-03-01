@@ -55,7 +55,7 @@
 
   <div class="flex gap-3 mb-2 text-2xs">
     <a href="../" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"><span class="font-bold">n</span>eovim</a>
-    <a href="../tmux/" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">tm<span class="font-bold">u</span>x</a>
+    <a href="../tmux/" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">t<span class="font-bold">m</span>ux</a>
     <span class="font-semibold text-gray-800 dark:text-gray-200">mac<span class="underline">O</span>S</span>
     <a href="../tools/" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"><span class="font-bold">t</span>ools</a>
   </div>
@@ -74,6 +74,7 @@
           <div class="key-row"><kbd>shift-alt-t</kbd><span>toggle maximize</span></div>
           <div class="key-row"><kbd>shift-alt-c</kbd><span>toggle center 70%</span></div>
           <div class="key-row"><kbd>shift-alt-arrows</kbd><span>resize window</span></div>
+          <div class="key-row"><kbd>shift-alt-0</kbd><span>normalize equal widths</span></div>
           <div class="key-row"><kbd>shift-alt-[1-9]</kbd><span>move to desktop N</span></div>
           <div class="key-row"><kbd>ctrl-shift-alt-f3</kbd><span>meeting layout</span></div>
           <div class="key-row"><kbd>ctrl-shift-alt-f4</kbd><span>screencast mode</span></div>
@@ -181,7 +182,7 @@
     document.addEventListener('keydown', e => {
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
       if (e.key === 'n') window.location.href = '../';
-      if (e.key === 'u') window.location.href = '../tmux/';
+      if (e.key === 'm') window.location.href = '../tmux/';
       if (e.key === 't') window.location.href = '../tools/';
     });
   </script>
