@@ -67,25 +67,25 @@
       <div class="section-label">Git</div>
 
       <div class="card">
-        <h2 class="card-title">Worktrees <span class="card-subtitle">(wt)</span></h2>
+        <h2 class="card-title">Worktrees <span class="card-subtitle">(git worktree)</span></h2>
         <div class="grid-keys">
-          <div class="key-row"><kbd>wt switch</kbd><span>interactive picker</span></div>
-          <div class="key-row"><kbd>wt switch &lt;branch&gt;</kbd><span>switch to worktree</span></div>
-          <div class="key-row"><kbd>wt switch -c &lt;branch&gt;</kbd><span>create new branch + worktree</span></div>
-          <div class="key-row"><kbd>wt switch -c &lt;b&gt; -b &lt;base&gt;</kbd><span>create from specific base</span></div>
-          <div class="key-row"><kbd>wt switch -</kbd><span>previous worktree</span></div>
-          <div class="key-row"><kbd>wt switch ^</kbd><span>default branch worktree</span></div>
-          <div class="key-row"><kbd>wt switch pr:123</kbd><span>switch to PR branch</span></div>
-          <div class="key-row"><kbd>wt list</kbd><span>list worktrees and status</span></div>
-          <div class="key-row"><kbd>wt remove</kbd><span>remove current worktree</span></div>
-          <div class="key-row"><kbd>wt remove &lt;branch&gt;</kbd><span>remove specific worktree</span></div>
-          <div class="key-row"><kbd>wt merge</kbd><span>squash, rebase, ff, remove</span></div>
-          <div class="key-row"><kbd>wt merge --no-squash</kbd><span>merge preserving commits</span></div>
-          <div class="key-row"><kbd>wt step commit</kbd><span>stage + commit with LLM msg</span></div>
-          <div class="key-row"><kbd>wt step rebase</kbd><span>rebase onto target</span></div>
-          <div class="key-row"><kbd>wt step diff</kbd><span>show changes since branching</span></div>
-          <div class="key-row"><kbd>wt step prune</kbd><span>remove merged worktrees</span></div>
+          <div class="key-row"><kbd>git worktree list</kbd><span>list worktrees</span></div>
+          <div class="key-row"><kbd>git worktree add .worktrees/&lt;dir&gt; -b &lt;branch&gt;</kbd><span>create new branch + worktree</span></div>
+          <div class="key-row"><kbd>git worktree add .worktrees/&lt;dir&gt; -b &lt;b&gt; &lt;base&gt;</kbd><span>create from specific base</span></div>
+          <div class="key-row"><kbd>git worktree add .worktrees/&lt;dir&gt; &lt;branch&gt;</kbd><span>worktree for existing branch</span></div>
+          <div class="key-row"><kbd>cd "$(git worktree list | fzf | cut -d' ' -f1)"</kbd><span>interactive picker</span></div>
+          <div class="key-row"><kbd>cd -</kbd><span>previous worktree</span></div>
+          <div class="key-row"><kbd>cd "$(git worktree list | head -1 | cut -d' ' -f1)"</kbd><span>main checkout</span></div>
+          <div class="key-row"><kbd>gh pr checkout 123</kbd><span>PR branch (run inside a worktree)</span></div>
+          <div class="key-row"><kbd>git worktree remove &lt;dir&gt;</kbd><span>remove worktree (keeps branch)</span></div>
+          <div class="key-row"><kbd>git worktree remove --force &lt;dir&gt;</kbd><span>remove with uncommitted changes</span></div>
+          <div class="key-row"><kbd>git branch -d &lt;branch&gt;</kbd><span>delete branch after removing</span></div>
+          <div class="key-row"><kbd>git worktree prune</kbd><span>forget manually deleted folders</span></div>
+          <div class="key-row"><kbd>git diff main...HEAD</kbd><span>changes since branching</span></div>
+          <div class="key-row"><kbd>git rebase main</kbd><span>rebase onto main</span></div>
+          <div class="key-row"><kbd>git merge --no-ff &lt;branch&gt;</kbd><span>merge from main checkout, keep commits</span></div>
         </div>
+        <p class="text-2xs text-gray-500 dark:text-gray-500 mt-1.5 leading-relaxed">A branch can be checked out in only one worktree. <code class="px-1 py-px bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded">.worktrees/</code> is ignored globally.</p>
       </div>
 
       <div class="card">
