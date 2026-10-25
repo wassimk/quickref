@@ -45,6 +45,16 @@
       .key-row span {
         @apply text-2xs text-gray-600 dark:text-gray-400;
       }
+      /* Long commands: left-aligned in their own column so descriptions line up */
+      .grid-keys.commands {
+        @apply grid-cols-[max-content_1fr] gap-x-2 gap-y-0.5 items-baseline;
+      }
+      .commands .key-row {
+        @apply contents;
+      }
+      .commands .key-row kbd {
+        @apply min-w-0 text-left;
+      }
       .section-label {
         @apply text-sm font-bold mb-1.5 text-gray-700 dark:text-gray-300;
       }
@@ -62,13 +72,13 @@
 
   <div class="grid grid-cols-3 gap-3 items-start max-w-5xl">
 
-    <!-- ===== COLUMN 1: Git tools ===== -->
-    <div>
+    <!-- ===== COLUMNS 1-2: Git tools (wide for long commands) ===== -->
+    <div class="col-span-2">
       <div class="section-label">Git</div>
 
       <div class="card">
         <h2 class="card-title">Worktrees <span class="card-subtitle">(git worktree)</span></h2>
-        <div class="grid-keys">
+        <div class="grid-keys commands">
           <div class="key-row"><kbd>git worktree list</kbd><span>list worktrees</span></div>
           <div class="key-row"><kbd>git worktree add .worktrees/&lt;dir&gt; -b &lt;branch&gt;</kbd><span>create new branch + worktree</span></div>
           <div class="key-row"><kbd>git worktree add .worktrees/&lt;dir&gt; -b &lt;b&gt; &lt;base&gt;</kbd><span>create from specific base</span></div>
@@ -102,7 +112,7 @@
       </div>
     </div>
 
-    <!-- ===== COLUMN 2: CLI tools ===== -->
+    <!-- ===== COLUMN 3: CLI tools and Claude ===== -->
     <div>
       <div class="section-label">CLI Tools</div>
 
@@ -135,11 +145,8 @@
           <div class="key-row"><kbd>grex &lt;examples&gt;</kbd><span>generate regex from examples</span></div>
         </div>
       </div>
-    </div>
 
-    <!-- ===== COLUMN 3: Claude ===== -->
-    <div>
-      <div class="section-label">Claude</div>
+      <div class="section-label mt-3">Claude</div>
 
       <div class="card">
         <h2 class="card-title">Claude Code</h2>
