@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Herdr — Quick Reference</title>
+  <title>Rex — Quick Reference</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -56,27 +56,25 @@
   <div class="flex gap-3 mb-2 text-2xs">
     <a href="../system/" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">mac<span class="font-bold">O</span>S</a>
     <a href="../tools/" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"><span class="font-bold">t</span>ools</a>
-    <span class="font-semibold text-gray-800 dark:text-gray-200"><span class="underline">h</span>erdr</span>
+    <span class="font-semibold text-gray-800 dark:text-gray-200"><span class="underline">r</span>ex</span>
     <a href="../neovim/" class="text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors"><span class="font-bold">n</span>eovim</a>
   </div>
 
-  <div class="max-w-xs">
+  <div class="grid grid-cols-2 gap-3 items-start max-w-2xl">
 
     <div>
       <div class="section-label">&nbsp;</div>
 
       <div class="card">
-        <h2 class="card-title">Workspaces</h2>
+        <h2 class="card-title">Sessions &amp; Windows</h2>
         <div class="grid-keys">
-          <div class="key-row"><kbd>cmd-shift-k</kbd><span>new workspace picker</span></div>
-          <div class="key-row"><kbd>cmd-k</kbd><span>workspace picker</span></div>
-          <div class="key-row"><kbd>cmd-l</kbd><span>goto picker (agents, tabs)</span></div>
-          <div class="key-row"><kbd>cmd-.</kbd><span>rename workspace</span></div>
-          <div class="key-row"><kbd>ctrl-s shift-d</kbd><span>close workspace</span></div>
-          <div class="key-row"><kbd>ctrl-s q</kbd><span>detach</span></div>
-          <div class="key-row"><kbd>ctrl-s b</kbd><span>toggle sidebar</span></div>
-          <div class="key-row"><kbd>ctrl-s shift-r</kbd><span>reload config</span></div>
-          <div class="key-row"><kbd>ctrl-s ?</kbd><span>help panel</span></div>
+          <div class="key-row"><kbd>cmd-k</kbd><span>change session</span></div>
+          <div class="key-row"><kbd>cmd-shift-n</kbd><span>new session</span></div>
+          <div class="key-row"><kbd>cmd-r</kbd><span>refresh sessions</span></div>
+          <div class="key-row"><kbd>cmd-n</kbd><span>new window</span></div>
+          <div class="key-row"><kbd>cmd-shift-w</kbd><span>close window</span></div>
+          <div class="key-row"><kbd>cmd-/</kbd><span>toggle sidebar</span></div>
+          <div class="key-row"><kbd>cmd-.</kbd><span>show activity</span></div>
         </div>
       </div>
 
@@ -85,41 +83,56 @@
         <div class="grid-keys">
           <div class="key-row"><kbd>cmd-t</kbd><span>new tab</span></div>
           <div class="key-row"><kbd>cmd-[1-9]</kbd><span>switch to tab</span></div>
-          <div class="key-row"><kbd>cmd-shift-t</kbd><span>move pane to new tab</span></div>
-          <div class="key-row"><kbd>cmd-shift-[ / ]</kbd><span>prev / next tab</span></div>
-          <div class="key-row"><kbd>cmd-,</kbd><span>rename tab</span></div>
-          <div class="key-row"><kbd>ctrl-s ctrl-p / ctrl-n</kbd><span>move tab left / right</span></div>
-          <div class="key-row"><kbd>ctrl-s shift-x</kbd><span>close tab</span></div>
+          <div class="key-row"><kbd>ctrl-[shift]-tab</kbd><span>next / prev tab</span></div>
+          <div class="key-row"><kbd>ctrl-shift-pgup / pgdn</kbd><span>move tab left / right</span></div>
+          <div class="key-row"><kbd>cmd-alt-w</kbd><span>close tab</span></div>
         </div>
       </div>
+
+      <div class="card">
+        <h2 class="card-title">Find &amp; Navigate</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cmd-shift-p</kbd><span>command palette</span></div>
+          <div class="key-row"><kbd>cmd-shift-g</kbd><span>go to directory</span></div>
+          <div class="key-row"><kbd>cmd-ctrl-i</kbd><span>insert path</span></div>
+          <div class="key-row"><kbd>cmd-f</kbd><span>find</span></div>
+          <div class="key-row"><kbd>cmd-g</kbd><span>find next</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">&nbsp;</div>
 
       <div class="card">
         <h2 class="card-title">Panes</h2>
         <div class="grid-keys">
-          <div class="key-row"><kbd>cmd-n</kbd><span>split down</span></div>
-          <div class="key-row"><kbd>cmd-shift-n</kbd><span>split right</span></div>
-          <div class="key-row"><kbd>cmd-w</kbd><span>close pane</span></div>
-          <div class="key-row"><kbd>cmd-z</kbd><span>zoom pane</span></div>
-          <div class="key-row"><kbd>ctrl-hjkl</kbd><span>move focus (vim aware)</span></div>
-          <div class="key-row"><kbd>shift-[arrow]</kbd><span>resize pane</span></div>
-          <div class="key-row"><kbd>ctrl-s r</kbd><span>resize mode (hjkl)</span></div>
-          <div class="key-row"><kbd>ctrl-s shift-hjkl</kbd><span>swap pane</span></div>
-          <div class="key-row"><kbd>ctrl-s ctrl-l</kbd><span>clear screen</span></div>
+          <div class="key-row"><kbd>cmd-d</kbd><span>split right</span></div>
+          <div class="key-row"><kbd>cmd-shift-d</kbd><span>split down</span></div>
+          <div class="key-row"><kbd>cmd-shift-left / up</kbd><span>split left / up</span></div>
+          <div class="key-row"><kbd>cmd-return</kbd><span>split best fit</span></div>
+          <div class="key-row"><kbd>cmd-shift-return</kbd><span>zoom pane</span></div>
+          <div class="key-row"><kbd>cmd-alt-return</kbd><span>float pane</span></div>
+          <div class="key-row"><kbd>cmd-w</kbd><span>close pane, else tab, else window</span></div>
         </div>
       </div>
 
       <div class="card">
-        <h2 class="card-title">Copy Mode &amp; Agents</h2>
+        <h2 class="card-title">Focus &amp; Move</h2>
         <div class="grid-keys">
-          <div class="key-row"><kbd>cmd-[</kbd><span>enter copy mode</span></div>
-          <div class="key-row"><kbd>v / y</kbd><span>select / copy</span></div>
-          <div class="key-row"><kbd>[shift]-/</kbd><span>search up / down</span></div>
-          <div class="key-row"><kbd>ctrl-s e</kbd><span>edit scrollback</span></div>
-          <div class="key-row"><kbd>space-a-a</kbd><span>nvim: focus claude pane</span></div>
-          <div class="key-row"><kbd>space-a-s</kbd><span>nvim: send selection</span></div>
-          <div class="key-row"><kbd>space-a-b / a-t</kbd><span>nvim: send file / cursor ref</span></div>
+          <div class="key-row"><kbd>cmd-alt-arrows</kbd><span>focus pane</span></div>
+          <div class="key-row"><kbd>cmd-[ / ]</kbd><span>prev / next pane</span></div>
+          <div class="key-row"><kbd>cmd-shift-alt-arrows</kbd><span>move pane</span></div>
         </div>
-        <p class="text-2xs text-gray-500 dark:text-gray-500 mt-1">vim bindings in copy mode</p>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">App</h2>
+        <div class="grid-keys">
+          <div class="key-row"><kbd>cmd-,</kbd><span>settings</span></div>
+          <div class="key-row"><kbd>cmd-shift-,</kbd><span>diagnostics</span></div>
+          <div class="key-row"><kbd>cmd-+ / - / 0</kbd><span>font bigger / smaller / reset</span></div>
+        </div>
       </div>
     </div>
 
